@@ -3,10 +3,24 @@
   "version": "0.1.0",
   "description": "Optimism node",
   "type": "service",
-  "author": "danielesalatti",
-  "categories": ["Developer tools"],
+  "chain": "ethereum",
+  "author": "Daniele Salatti <me@danielesalatti.com> (https://danielesalatti.com)",
+  "categories": ["Blockchain"],
   "links": {
     "homepage": "https://danielesalatti.com"
   },
-  "license": "GPL-3.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dappnode/DAppNodePackage-ethereum-optimism"
+  },
+  "license": "GPL-3.0",
+  "globalEnvs": {
+    "all": true
+  },
+  "disclaimer": {
+    "message": "This software is experimental, presented “as is” and inherently carries risks."
+  },
+  "bugs": {
+    "url": "https://github.com/dappnode/DAppNodePackage-ethereum-optimism"
+  }
 }
