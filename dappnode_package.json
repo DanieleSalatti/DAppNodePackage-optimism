@@ -6,9 +6,19 @@
   "chain": "ethereum",
   "author": "Daniele Salatti <me@danielesalatti.com> (https://danielesalatti.com)",
   "categories": ["Blockchain"],
+  "mainService": "l2geth-replica",
   "links": {
     "homepage": "https://danielesalatti.com"
   },
+  "exposable": [
+    {
+      "name": "Optimism JSON RPC",
+      "description": "JSON RPC endpoint for Optimism mainnet",
+      "serviceName": "l2geth-replica",
+      "port": 9991,
+      "exposeByDefault": true
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/dappnode/DAppNodePackage-ethereum-optimism"

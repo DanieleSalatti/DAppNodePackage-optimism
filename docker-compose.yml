@@ -5,8 +5,7 @@ services:
     restart: unless-stopped
     environment:
       - ETH_NETWORK=mainnet
-      - >-
-        DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT=https://mainnet.infura.io/v3/e23ef6f1da494103bf900b3734e228f7
+      - "DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT=http://geth.dappnode:8545"
       - "DATA_TRANSPORT_LAYER__L2_RPC_ENDPOINT=https://mainnet.optimism.io"
       - >-
         REPLICA_HEALTHCHECK__ETH_NETWORK_RPC_PROVIDER=https://mainnet.optimism.io
@@ -58,8 +57,7 @@ services:
         /scripts/l2geth-replica-start.sh
     environment:
       - ETH_NETWORK=mainnet
-      - >-
-        DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT=https://mainnet.infura.io/v3/e23ef6f1da494103bf900b3734e228f7
+      - "DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT=http://geth.dappnode:8545"
       - "DATA_TRANSPORT_LAYER__L2_RPC_ENDPOINT=https://mainnet.optimism.io"
       - >-
         REPLICA_HEALTHCHECK__ETH_NETWORK_RPC_PROVIDER=https://mainnet.optimism.io
@@ -125,8 +123,7 @@ services:
     restart: unless-stopped
     environment:
       - ETH_NETWORK=mainnet
-      - >-
-        DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT=https://mainnet.infura.io/v3/e23ef6f1da494103bf900b3734e228f7
+      - "DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT=http://geth.dappnode:8545"
       - "DATA_TRANSPORT_LAYER__L2_RPC_ENDPOINT=https://mainnet.optimism.io"
       - >-
         REPLICA_HEALTHCHECK__ETH_NETWORK_RPC_PROVIDER=https://mainnet.optimism.io
