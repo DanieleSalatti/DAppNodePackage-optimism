@@ -1,0 +1,12 @@
+{
+  "name": "optimism.public.dappnode.eth",
+  "version": "0.1.0",
+  "description": "Optimism node",
+  "type": "service",
+  "author": "danielesalatti",
+  "categories": ["Developer tools"],
+  "links": {
+    "homepage": "https://danielesalatti.com"
+  },
+  "license": "GPL-3.0"
+}

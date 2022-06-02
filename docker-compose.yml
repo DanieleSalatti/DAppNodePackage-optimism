@@ -1,0 +1,42 @@
+version: "3.4"
+services:
+  data-transport-layer:
+    image: ethereumoptimism/data-transport-layer:${DTL_IMAGE_TAG:-latest}
+    restart: ${RESTART}
+    env_file:
+      - ${SHARED_ENV_PATH}/data-transport-layer.env
+      - .env
+    volumes:
+      - dtl:/db
+    ports:
+      - ${DTL_PORT:-7878}:7878
+  l2geth-replica:
+    image: ethereumoptimism/l2geth:${L2GETH_IMAGE_TAG:-latest}
+    restart: ${RESTART}
+    stop_grace_period: 3m
+    entrypoint:
+      - /bin/sh
+      - -c
+      #- "sleep infinity"
+      - "./scripts/$GETH_INIT_SCRIPT && ./scripts/l2geth-replica-start.sh"
+    env_file:
+      - ${SHARED_ENV_PATH}/l2geth-replica.env
+      - .env
+    volumes:
+      - geth:/geth
+      - ./scripts/:/scripts/
+    ports:
+      - ${L2GETH_HTTP_PORT:-9991}:8545
+      - ${L2GETH_WS_PORT:-9992}:8546
+  replica-healthcheck:
+    # TODO: Update this to latest when we fix the environment variables
+    image: ethereumoptimism/replica-healthcheck:${HC_IMAGE_TAG:-0.3.11}
+    restart: ${RESTART}
+    env_file:
+      - ${SHARED_ENV_PATH}/replica-healthcheck.env
+      - .env
+    volumes:
+      - ./scripts/:/scripts/
+volumes:
+  dtl:
+  geth:
