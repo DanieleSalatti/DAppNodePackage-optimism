@@ -39,8 +39,8 @@ services:
       - "dtl:/db"
     ports:
       - "7878:7878"
-  l2geth-replica:
-    image: "l2geth-replica.optimism.public.dappnode.eth:0.1.0"
+  optimism:
+    image: "optimism.optimism.public.dappnode.eth:0.1.0"
     build:
       context: l2geth
       dockerfile: Dockerfile
@@ -138,7 +138,27 @@ services:
       - REPLICA_HEALTHCHECK__L2GETH_IMAGE_TAG=0.4.8
       - >-
         REPLICA_HEALTHCHECK__ETH_NETWORK_RPC_PROVIDER=http://sequencer.default:8545
-      - "REPLICA_HEALTHCHECK__ETH_REPLICA_RPC_PROVIDER=http://l2geth-replica:8545"
+      - "REPLICA_HEALTHCHECK__ETH_REPLICA_RPC_PROVIDER=http://optimism:8545"
+  fault-detector:
+    image: "ethereumoptimism/fault-detector:0.1.1"
+    restart: unless-stopped
+    environment:
+      - ETH_NETWORK=mainnet
+      - "FAULT_DETECTOR__L1_RPC_PROVIDER=http://geth.dappnode:8545"
+      - "DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT=http://geth.dappnode:8545"
+      - "DATA_TRANSPORT_LAYER__L2_RPC_ENDPOINT=https://mainnet.optimism.io"
+      - >-
+        REPLICA_HEALTHCHECK__ETH_NETWORK_RPC_PROVIDER=https://mainnet.optimism.io
+      - "SEQUENCER_CLIENT_HTTP=https://mainnet.optimism.io"
+      - SHARED_ENV_PATH=./mainnet
+      - GCMODE=archive
+      - HC_IMAGE_TAG=
+      - L2GETH_HTTP_PORT=9991
+      - L2GETH_WS_PORT=9992
+      - DTL_PORT=7878
+      - "FAULT_DETECTOR__L2_RPC_PROVIDER=http://optimism:8545"
+    ports:
+      - "7301:7300"
 volumes:
   dtl: {}
   l2geth: {}

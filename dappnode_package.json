@@ -6,7 +6,7 @@
   "chain": "ethereum",
   "author": "Daniele Salatti <me@danielesalatti.com> (https://danielesalatti.com)",
   "categories": ["Blockchain"],
-  "mainService": "l2geth-replica",
+  "mainService": "optimism",
   "links": {
     "homepage": "https://danielesalatti.com"
   },
@@ -14,14 +14,14 @@
     {
       "name": "Optimism JSON RPC",
       "description": "JSON RPC endpoint for Optimism mainnet",
-      "serviceName": "l2geth-replica",
+      "serviceName": "optimism",
       "port": 9991,
       "exposeByDefault": true
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dappnode/DAppNodePackage-ethereum-optimism"
+    "url": "https://github.com/DanieleSalatti/DAppNodePackage-optimism"
   },
   "license": "GPL-3.0",
   "globalEnvs": {
@@ -31,6 +31,6 @@
     "message": "This software is experimental, presented “as is” and inherently carries risks."
   },
   "bugs": {
-    "url": "https://github.com/dappnode/DAppNodePackage-ethereum-optimism"
+    "url": "https://github.com/dDanieleSalatti/DAppNodePackage-optimism/issues"
   }
 }
