@@ -116,8 +116,8 @@ services:
       - WS_ORIGINS=*
       - WS=true
     ports:
-      - "9991:8545"
-      - "9992:8546"
+      - "9991:9991"
+      - "9992:9992"
   replica-healthcheck:
     image: "ethereumoptimism/replica-healthcheck:0.3.11"
     restart: unless-stopped
@@ -136,8 +136,7 @@ services:
       - DTL_PORT=7878
       - REPLICA_HEALTHCHECK__ETH_NETWORK=mainnet
       - REPLICA_HEALTHCHECK__L2GETH_IMAGE_TAG=0.4.8
-      - >-
-        REPLICA_HEALTHCHECK__ETH_NETWORK_RPC_PROVIDER=http://sequencer.default:8545
+      - "REPLICA_HEALTHCHECK__ETH_NETWORK_RPC_PROVIDER=http://geth.dappnode:8545"
       - "REPLICA_HEALTHCHECK__ETH_REPLICA_RPC_PROVIDER=http://optimism:8545"
   fault-detector:
     image: "ethereumoptimism/fault-detector:0.1.1"

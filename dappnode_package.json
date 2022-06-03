@@ -16,7 +16,7 @@
       "description": "JSON RPC endpoint for Optimism mainnet",
       "serviceName": "optimism",
       "port": 9991,
-      "exposeByDefault": true
+      "exposeByDefault": false
     }
   ],
   "repository": {
