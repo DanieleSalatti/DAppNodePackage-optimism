@@ -1,7 +1,7 @@
 {
   "name": "optimism.public.dappnode.eth",
   "version": "0.1.0",
-  "description": "Optimism node",
+  "description": "Optimism node (experimental)",
   "type": "service",
   "chain": "ethereum",
   "author": "Daniele Salatti <me@danielesalatti.com> (https://danielesalatti.com)",
