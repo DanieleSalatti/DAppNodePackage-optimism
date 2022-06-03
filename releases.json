@@ -1,8 +1,9 @@
 {
   "0.1.0": {
-    "hash": "/ipfs/QmTzJpzqyaTLcA5rnS9hmhoVr6WBDpVE5rY7DLGB7qVxdL",
+    "hash": "/ipfs/QmUFsBB4ivhU2xGLMY956bY3WMB3tv1RoVFpiRPAG5PyeQ",
     "uploadedTo": {
-      "dappnode": "Fri, 03 Jun 2022 06:02:00 GMT"
-    }
+      "dappnode": "Fri, 03 Jun 2022 08:09:51 GMT"
+    },
+    "link": "https://dappnode.github.io/sdk-publish/?r=optimism.public.dappnode.eth&v=0.1.0&h=%2Fipfs%2FQmUFsBB4ivhU2xGLMY956bY3WMB3tv1RoVFpiRPAG5PyeQ&d=0x523d007855B3543797E0d3D462CB44B601274819"
   }
 }
