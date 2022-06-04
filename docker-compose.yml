@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   data-transport-layer:
-    image: "ethereumoptimism/data-transport-layer:0.5.20"
+    image: "ethereumoptimism/data-transport-layer:0.5.32"
     restart: unless-stopped
     environment:
       - ETH_NETWORK=mainnet
@@ -40,7 +40,7 @@ services:
     ports:
       - "7878:7878"
   optimism:
-    image: "optimism.optimism.public.dappnode.eth:0.1.0"
+    image: "ethereumoptimism/l2geth:0.5.21"
     build:
       context: l2geth
       dockerfile: Dockerfile
