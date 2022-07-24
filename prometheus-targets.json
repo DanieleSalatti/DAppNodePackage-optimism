@@ -1,0 +1,13 @@
+[
+  {
+    "labels": {
+      "package": "optimism.public.dappnode.eth",
+      "service": "optimism.dappnode"
+    },
+    "targets": [
+      "dtl.dappnode:7878",
+      "replica-healthcheck.dappnode:7300",
+      "fault-detector.dappnode:7300"
+    ]
+  }
+]

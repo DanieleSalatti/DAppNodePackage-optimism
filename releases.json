@@ -18,5 +18,11 @@
       "dappnode": "Sat, 04 Jun 2022 17:22:59 GMT"
     },
     "link": "https://dappnode.github.io/sdk-publish/?r=optimism.public.dappnode.eth&v=0.1.1&h=%2Fipfs%2FQmR43pRWrUroYL278UzMf1pE7T9PLKb9LGQtVwSoEdtXLQ"
+  },
+  "0.2.0": {
+    "hash": "/ipfs/QmfByyYfGrcdTFLz1KHpu4p84Sw277tEGp6sHnsykzhxfk",
+    "uploadedTo": {
+      "dappnode": "Sun, 24 Jul 2022 15:12:56 GMT"
+    }
   }
 }

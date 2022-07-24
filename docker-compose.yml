@@ -136,8 +136,8 @@ services:
       - DTL_PORT=7878
       - REPLICA_HEALTHCHECK__ETH_NETWORK=mainnet
       - REPLICA_HEALTHCHECK__L2GETH_IMAGE_TAG=0.4.8
-      - "REPLICA_HEALTHCHECK__ETH_NETWORK_RPC_PROVIDER=http://geth.dappnode:8545"
-      - "REPLICA_HEALTHCHECK__ETH_REPLICA_RPC_PROVIDER=http://optimism:8545"
+      - "HEALTHCHECK__REFERENCE_RPC_PROVIDER=http://geth.dappnode:8545"
+      - "HEALTHCHECK__TARGET_RPC_PROVIDER=http://optimism:8545"
   fault-detector:
     image: "ethereumoptimism/fault-detector:0.2.5"
     restart: unless-stopped
@@ -146,8 +146,6 @@ services:
       - "FAULT_DETECTOR__L1_RPC_PROVIDER=http://geth.dappnode:8545"
       - "DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT=http://geth.dappnode:8545"
       - "DATA_TRANSPORT_LAYER__L2_RPC_ENDPOINT=https://mainnet.optimism.io"
-      - >-
-        REPLICA_HEALTHCHECK__ETH_NETWORK_RPC_PROVIDER=https://mainnet.optimism.io
       - "SEQUENCER_CLIENT_HTTP=https://mainnet.optimism.io"
       - SHARED_ENV_PATH=./mainnet
       - GCMODE=archive
