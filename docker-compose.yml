@@ -40,7 +40,7 @@ services:
     ports:
       - "7878:7878"
   optimism:
-    image: "optimism.optimism.public.dappnode.eth:0.2.5"
+    image: "optimism.optimism.public.dappnode.eth:0.2.6"
     build:
       context: l2geth
       dockerfile: Dockerfile
@@ -115,6 +115,7 @@ services:
       - "WS_API=eth,rollup,net,web3,debug"
       - WS_ORIGINS=*
       - WS=true
+      - METRICS_ENABLE=true
     ports:
       - "9991:9991"
       - "9992:9992"
