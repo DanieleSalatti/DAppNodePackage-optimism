@@ -18,4 +18,5 @@ exec geth \
   --unlock=$BLOCK_SIGNER_ADDRESS \
   --mine \
   --miner.etherbase=$BLOCK_SIGNER_ADDRESS \
+  --metrics --metrics.addr 0.0.0.0 \
   $@

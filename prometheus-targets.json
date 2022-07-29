@@ -5,9 +5,17 @@
       "service": "optimism.dappnode"
     },
     "targets": [
-      "dtl.dappnode:7878",
-      "replica-healthcheck.dappnode:7300",
-      "fault-detector.dappnode:7300"
+      "data-transport-layer.optimism.public.dappnode:7878",
+      "replica-healthcheck.optimism.public.dappnode:7300",
+      "fault-detector.optimism.public.dappnode:7300"
     ]
+  },
+  {
+    "labels": {
+      "package": "optimism.public.dappnode.eth",
+      "service": "l2geth.optimism.dappnode",
+      "__metrics_path__": "/debug/metrics/prometheus"
+    },
+    "targets": ["optimism.optimism.public.dappnode:6060"]
   }
 ]

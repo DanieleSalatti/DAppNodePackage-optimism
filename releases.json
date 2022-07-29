@@ -24,5 +24,35 @@
     "uploadedTo": {
       "dappnode": "Sun, 24 Jul 2022 15:12:56 GMT"
     }
+  },
+  "0.2.1": {
+    "hash": "/ipfs/QmRsQ3RX9eHR9DpGy4pfsGtb1CN2PsEGYzUxywxrbEsCL2",
+    "uploadedTo": {
+      "dappnode": "Mon, 25 Jul 2022 06:50:58 GMT"
+    }
+  },
+  "0.2.2": {
+    "hash": "/ipfs/QmWs6b82Lq7vFbDSmV7ybXskt396tRFWify3vqPhQgG2ou",
+    "uploadedTo": {
+      "dappnode": "Tue, 26 Jul 2022 05:27:08 GMT"
+    }
+  },
+  "0.2.3": {
+    "hash": "/ipfs/QmRc5incMGJSg6b64KcTGFXA2HbipZTXBxmBDojsJg2ihn",
+    "uploadedTo": {
+      "dappnode": "Tue, 26 Jul 2022 06:08:01 GMT"
+    }
+  },
+  "0.2.4": {
+    "hash": "/ipfs/QmTAd2qWgSCihZ3cyFYwHZLs34xuG5t9PmXBjJpag5SRjZ",
+    "uploadedTo": {
+      "dappnode": "Thu, 28 Jul 2022 17:58:30 GMT"
+    }
+  },
+  "0.2.5": {
+    "hash": "/ipfs/QmTNYLDU4Tc2EQyQLutV3X5r1WLT3wsNn53i33HuLSskEY",
+    "uploadedTo": {
+      "dappnode": "Fri, 29 Jul 2022 16:48:18 GMT"
+    }
   }
 }
