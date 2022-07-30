@@ -16,6 +16,6 @@
       "service": "l2geth.optimism.dappnode",
       "__metrics_path__": "/debug/metrics/prometheus"
     },
-    "targets": ["optimism.optimism.public.dappnode:8545"]
+    "targets": ["optimism.optimism.public.dappnode:6060"]
   }
 ]
