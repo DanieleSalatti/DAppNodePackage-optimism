@@ -4,43 +4,33 @@ services:
     image: "ethereumoptimism/data-transport-layer:0.5.39"
     restart: unless-stopped
     environment:
-      - ETH_NETWORK=mainnet
-      - "DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT=http://geth.dappnode:8545"
-      - "DATA_TRANSPORT_LAYER__L2_RPC_ENDPOINT=https://mainnet.optimism.io"
-      - >-
-        REPLICA_HEALTHCHECK__ETH_NETWORK_RPC_PROVIDER=https://mainnet.optimism.io
-      - "SEQUENCER_CLIENT_HTTP=https://mainnet.optimism.io"
-      - SHARED_ENV_PATH=./mainnet
-      - GCMODE=archive
-      - HC_IMAGE_TAG=
-      - L2GETH_HTTP_PORT=9991
-      - L2GETH_WS_PORT=9992
-      - DTL_PORT=7878
-      - >-
-        DATA_TRANSPORT_LAYER__ADDRESS_MANAGER=0xdE1FCfB0851916CA5101820A69b13a4E276bd81F
-      - DATA_TRANSPORT_LAYER__CONFIRMATIONS=12
-      - DATA_TRANSPORT_LAYER__DANGEROUSLY_CATCH_ALL_ERRORS=true
-      - DATA_TRANSPORT_LAYER__DB_PATH=/db
-      - DATA_TRANSPORT_LAYER__DEFAULT_BACKEND=l2
-      - DATA_TRANSPORT_LAYER__ENABLE_METRICS=true
-      - DATA_TRANSPORT_LAYER__ETH_NETWORK_NAME=mainnet
-      - DATA_TRANSPORT_LAYER__L1_GAS_PRICE_BACKEND=l2
-      - DATA_TRANSPORT_LAYER__L2_CHAIN_ID=10
-      - DATA_TRANSPORT_LAYER__LOGS_PER_POLLING_INTERVAL=2000
-      - DATA_TRANSPORT_LAYER__NODE_ENV=production
-      - DATA_TRANSPORT_LAYER__POLLING_INTERVAL=500
-      - DATA_TRANSPORT_LAYER__SENTRY_TRACE_RATE=0.05
-      - DATA_TRANSPORT_LAYER__SERVER_HOSTNAME=0.0.0.0
-      - DATA_TRANSPORT_LAYER__SERVER_PORT=7878
-      - DATA_TRANSPORT_LAYER__SYNC_FROM_L1=false
-      - DATA_TRANSPORT_LAYER__SYNC_FROM_L2=true
-      - DATA_TRANSPORT_LAYER__TRANSACTIONS_PER_POLLING_INTERVAL=1000
+      NETWORK_NAME: mainnet
+      DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT: "http://geth.dappnode:8545"
+      DATA_TRANSPORT_LAYER__ADDRESS_MANAGER: 1.2681053665338489e+48
+      DATA_TRANSPORT_LAYER__SYNC_FROM_L1: true
+      DATA_TRANSPORT_LAYER__SYNC_FROM_L2: false
+      DATA_TRANSPORT_LAYER__L1_START_HEIGHT: 13596466
+      DATA_TRANSPORT_LAYER__CONFIRMATIONS: 12
+      DATA_TRANSPORT_LAYER__DANGEROUSLY_CATCH_ALL_ERRORS: true
+      DATA_TRANSPORT_LAYER__DB_PATH: /db
+      DATA_TRANSPORT_LAYER__DEFAULT_BACKEND: l1
+      DATA_TRANSPORT_LAYER__L1_GAS_PRICE_BACKEND: l1
+      DATA_TRANSPORT_LAYER__ENABLE_METRICS: true
+      DATA_TRANSPORT_LAYER__ETH_NETWORK_NAME: mainnet
+      DATA_TRANSPORT_LAYER__L2_CHAIN_ID: 10
+      DATA_TRANSPORT_LAYER__LOGS_PER_POLLING_INTERVAL: 2000
+      DATA_TRANSPORT_LAYER__NODE_ENV: production
+      DATA_TRANSPORT_LAYER__POLLING_INTERVAL: 500
+      DATA_TRANSPORT_LAYER__SENTRY_TRACE_RATE: 0.05
+      DATA_TRANSPORT_LAYER__SERVER_HOSTNAME: 0.0.0.0
+      DATA_TRANSPORT_LAYER__SERVER_PORT: 7878
+      DATA_TRANSPORT_LAYER__TRANSACTIONS_PER_POLLING_INTERVAL: 1000
     volumes:
       - "dtl:/db"
     ports:
       - "7878:7878"
   optimism:
-    image: "optimism.optimism.public.dappnode.eth:0.2.9"
+    image: "optimism.optimism.public.dappnode.eth:0.3.0"
     build:
       context: l2geth
       dockerfile: Dockerfile
@@ -56,66 +46,49 @@ services:
         /scripts/check-for-chaindata-berlin.sh &&
         /scripts/l2geth-replica-start.sh
     environment:
-      - ETH_NETWORK=mainnet
-      - "DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT=http://geth.dappnode:8545"
-      - "DATA_TRANSPORT_LAYER__L2_RPC_ENDPOINT=https://mainnet.optimism.io"
-      - >-
-        REPLICA_HEALTHCHECK__ETH_NETWORK_RPC_PROVIDER=https://mainnet.optimism.io
-      - "SEQUENCER_CLIENT_HTTP=https://mainnet.optimism.io"
-      - SHARED_ENV_PATH=./mainnet
-      - GCMODE=archive
-      - HC_IMAGE_TAG=
-      - L2GETH_HTTP_PORT=9991
-      - L2GETH_WS_PORT=9992
-      - DTL_PORT=7878
-      - CHAIN_ID=10
-      - DATADIR=/geth
-      - NETWORK_ID=10
-      - NO_DISCOVER=true
-      - NO_USB=true
-      - GASPRICE=0
-      - BLOCK_SIGNER_ADDRESS=0x00000398232E2064F896018496b4b44b3D62751F
-      - >-
-        BLOCK_SIGNER_PRIVATE_KEY=6587ae678cf4fc9a33000cdbf9f35226b71dcc6a4684a31203241f9bcfd55d27
-      - BLOCK_SIGNER_PRIVATE_KEY_PASSWORD=pwd
-      - ETH1_CTC_DEPLOYMENT_HEIGHT=13596466
-      - ETH1_L1_FEE_WALLET_ADDRESS=0x391716d440c151c42cdf1c95c1d83a5427bca52c
-      - >-
-        ETH1_L1_CROSS_DOMAIN_MESSENGER_ADDRESS=0x25ace71c97B33Cc4729CF772ae268934F7ab5fA1
-      - >-
-        ETH1_L1_STANDARD_BRIDGE_ADDRESS=0x99C9fc46f92E8a1c0deC1b1747d010903E884bE1
-      - ETH1_SYNC_SERVICE_ENABLE=true
-      - >-
-        L2GETH_GENESIS_URL=https://storage.googleapis.com/optimism/mainnet/genesis-berlin.json
-      - >-
-        L2GETH_GENESIS_HASH=0x106b0a3247ca54714381b1109e82cc6b7e32fd79ae56fbcc2e7b1541122f84ea
-      - L2GETH_BERLIN_ACTIVATION_HEIGHT=3950000
-      - >-
-        ROLLUP_ADDRESS_MANAGER_OWNER_ADDRESS=0x9BA6e03D8B90dE867373Db8cF1A58d2F7F006b3A
-      - ROLLUP_BACKEND=l2
-      - "ROLLUP_CLIENT_HTTP=http://data-transport-layer:7878"
-      - ROLLUP_DISABLE_TRANSFERS=false
-      - ROLLUP_ENABLE_L2_GAS_POLLING=false
-      - >-
-        ROLLUP_GAS_PRICE_ORACLE_OWNER_ADDRESS=0x648E3e8101BFaB7bf5997Bd007Fb473786019159
-      - ROLLUP_MAX_CALLDATA_SIZE=40000
-      - ROLLUP_POLL_INTERVAL_FLAG=1s
-      - ROLLUP_SYNC_SERVICE_ENABLE=true
-      - ROLLUP_TIMESTAMP_REFRESH=5m
-      - ROLLUP_VERIFIER_ENABLE=true
-      - RPC_ADDR=0.0.0.0
-      - "RPC_API=eth,rollup,net,web3,debug"
-      - RPC_CORS_DOMAIN=*
-      - RPC_ENABLE=true
-      - RPC_PORT=8545
-      - RPC_VHOSTS=*
-      - TARGET_GAS_LIMIT=15000000
-      - USING_OVM=true
-      - WS_ADDR=0.0.0.0
-      - "WS_API=eth,rollup,net,web3,debug"
-      - WS_ORIGINS=*
-      - WS=true
-      - METRICS_ENABLE=true
+      NETWORK_NAME: mainnet
+      DATADIR: /geth
+      CHAIN_ID: 10
+      NETWORK_ID: 10
+      NO_DISCOVER: true
+      NO_USB: true
+      GASPRICE: 0
+      GCMODE: archive
+      BLOCK_SIGNER_ADDRESS: 3.1310654004980822e+41
+      BLOCK_SIGNER_PRIVATE_KEY: 6587ae678cf4fc9a33000cdbf9f35226b71dcc6a4684a31203241f9bcfd55d27
+      BLOCK_SIGNER_PRIVATE_KEY_PASSWORD: pwd
+      ETH1_CTC_DEPLOYMENT_HEIGHT: 13596466
+      ETH1_L1_FEE_WALLET_ADDRESS: 3.259273797727517e+47
+      ETH1_L1_CROSS_DOMAIN_MESSENGER_ADDRESS: 2.150885193622299e+47
+      ETH1_L1_STANDARD_BRIDGE_ADDRESS: 8.77980014167992e+47
+      ETH1_SYNC_SERVICE_ENABLE: true
+      L2GETH_GENESIS_URL: "https://storage.googleapis.com/optimism/mainnet/genesis-berlin.json"
+      L2GETH_GENESIS_HASH: 7.426128586284756e+75
+      L2GETH_BERLIN_ACTIVATION_HEIGHT: 3950000
+      ROLLUP_ADDRESS_MANAGER_OWNER_ADDRESS: 8.886150272754392e+47
+      ROLLUP_BACKEND: l1
+      ROLLUP_CLIENT_HTTP: 'http://data-transport-layer:7878"'
+      ROLLUP_DISABLE_TRANSFERS: false
+      ROLLUP_ENABLE_L2_GAS_POLLING: false
+      ROLLUP_GAS_PRICE_ORACLE_OWNER_ADDRESS: 5.7407122776105285e+47
+      ROLLUP_MAX_CALLDATA_SIZE: 40000
+      ROLLUP_POLL_INTERVAL_FLAG: 1s
+      ROLLUP_SYNC_SERVICE_ENABLE: true
+      ROLLUP_TIMESTAMP_REFRESH: 5m
+      ROLLUP_VERIFIER_ENABLE: true
+      SEQUENCER_CLIENT_HTTP: "https://mainnet.optimism.io"
+      RPC_ADDR: 0.0.0.0
+      RPC_API: "eth,rollup,net,web3,debug"
+      RPC_CORS_DOMAIN: "*"
+      RPC_ENABLE: true
+      RPC_PORT: 8545
+      RPC_VHOSTS: "*"
+      TARGET_GAS_LIMIT: 15000000
+      USING_OVM: true
+      WS_ADDR: 0.0.0.0
+      WS_API: "eth,rollup,net,web3,debug"
+      WS_ORIGINS: "*"
+      WS: true
     ports:
       - "9991:9991"
       - "9992:9992"
@@ -124,38 +97,16 @@ services:
     image: "ethereumoptimism/replica-healthcheck:1.1.5"
     restart: unless-stopped
     environment:
-      - ETH_NETWORK=mainnet
-      - "DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT=http://geth.dappnode:8545"
-      - "DATA_TRANSPORT_LAYER__L2_RPC_ENDPOINT=https://mainnet.optimism.io"
-      - >-
-        REPLICA_HEALTHCHECK__ETH_NETWORK_RPC_PROVIDER=https://mainnet.optimism.io
-      - "SEQUENCER_CLIENT_HTTP=https://mainnet.optimism.io"
-      - SHARED_ENV_PATH=./mainnet
-      - GCMODE=archive
-      - HC_IMAGE_TAG=
-      - L2GETH_HTTP_PORT=9991
-      - L2GETH_WS_PORT=9992
-      - DTL_PORT=7878
-      - REPLICA_HEALTHCHECK__ETH_NETWORK=mainnet
-      - REPLICA_HEALTHCHECK__L2GETH_IMAGE_TAG=0.4.8
-      - "HEALTHCHECK__REFERENCE_RPC_PROVIDER=http://geth.dappnode:8545"
-      - "HEALTHCHECK__TARGET_RPC_PROVIDER=http://optimism:8545"
+      NETWORK_NAME: mainnet
+      HEALTHCHECK__REFERENCE_RPC_PROVIDER: "http://geth.dappnode:8545"
+      HEALTHCHECK__TARGET_RPC_PROVIDER: 'http://optimism:8545"'
   fault-detector:
     image: "ethereumoptimism/fault-detector:0.2.5"
     restart: unless-stopped
     environment:
-      - ETH_NETWORK=mainnet
-      - "FAULT_DETECTOR__L1_RPC_PROVIDER=http://geth.dappnode:8545"
-      - "DATA_TRANSPORT_LAYER__L1_RPC_ENDPOINT=http://geth.dappnode:8545"
-      - "DATA_TRANSPORT_LAYER__L2_RPC_ENDPOINT=https://mainnet.optimism.io"
-      - "SEQUENCER_CLIENT_HTTP=https://mainnet.optimism.io"
-      - SHARED_ENV_PATH=./mainnet
-      - GCMODE=archive
-      - HC_IMAGE_TAG=
-      - L2GETH_HTTP_PORT=9991
-      - L2GETH_WS_PORT=9992
-      - DTL_PORT=7878
-      - "FAULT_DETECTOR__L2_RPC_PROVIDER=http://optimism:8545"
+      NETWORK_NAME: mainnet
+      FAULT_DETECTOR__L1_RPC_PROVIDER: "http://geth.dappnode:8545"
+      FAULT_DETECTOR__L2_RPC_PROVIDER: 'http://optimism:8545"'
     ports:
       - "7301:7300"
 volumes:
