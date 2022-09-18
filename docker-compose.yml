@@ -31,7 +31,7 @@ services:
     ports:
       - "7878:7878"
   optimism:
-    image: "optimism.optimism.public.dappnode.eth:0.7.0"
+    image: "optimism.optimism.public.dappnode.eth:0.8.0"
     build:
       context: l2geth
       dockerfile: Dockerfile
@@ -101,15 +101,6 @@ services:
       NETWORK_NAME: mainnet
       HEALTHCHECK__REFERENCE_RPC_PROVIDER: "https://mainnet.optimism.io"
       HEALTHCHECK__TARGET_RPC_PROVIDER: "http://optimism:8545"
-  fault-detector:
-    image: "ethereumoptimism/fault-detector:0.2.5"
-    restart: unless-stopped
-    environment:
-      NETWORK_NAME: mainnet
-      FAULT_DETECTOR__L1_RPC_PROVIDER: "http://geth.dappnode:8545"
-      FAULT_DETECTOR__L2_RPC_PROVIDER: "http://optimism:8545"
-    ports:
-      - "7301:7300"
 volumes:
   dtl: {}
   l2geth: {}
