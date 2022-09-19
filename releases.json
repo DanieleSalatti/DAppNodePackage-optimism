@@ -20,10 +20,11 @@
     "link": "https://dappnode.github.io/sdk-publish/?r=optimism.public.dappnode.eth&v=0.1.1&h=%2Fipfs%2FQmR43pRWrUroYL278UzMf1pE7T9PLKb9LGQtVwSoEdtXLQ"
   },
   "0.2.0": {
-    "hash": "/ipfs/QmfByyYfGrcdTFLz1KHpu4p84Sw277tEGp6sHnsykzhxfk",
+    "hash": "/ipfs/QmTdWKUFZncMcf2NL8EXv1QvreWSvWSyoYChBPxtpGUxg2",
     "uploadedTo": {
-      "dappnode": "Sun, 24 Jul 2022 15:12:56 GMT"
-    }
+      "dappnode": "Mon, 19 Sep 2022 01:23:09 GMT"
+    },
+    "link": "https://dappnode.github.io/sdk-publish/?r=optimism.public.dappnode.eth&v=0.2.0&h=%2Fipfs%2FQmTdWKUFZncMcf2NL8EXv1QvreWSvWSyoYChBPxtpGUxg2"
   },
   "0.2.1": {
     "hash": "/ipfs/QmRsQ3RX9eHR9DpGy4pfsGtb1CN2PsEGYzUxywxrbEsCL2",
@@ -120,5 +121,12 @@
     "uploadedTo": {
       "dappnode": "Sun, 18 Sep 2022 22:19:57 GMT"
     }
+  },
+  "1.0.0": {
+    "hash": "/ipfs/QmZMyWekg1DaCjXQCNAX8qSyfudc6vp3YFMpUHe5HX8tC8",
+    "uploadedTo": {
+      "dappnode": "Mon, 19 Sep 2022 01:55:51 GMT"
+    },
+    "link": "https://dappnode.github.io/sdk-publish/?r=optimism.public.dappnode.eth&v=1.0.0&h=%2Fipfs%2FQmZMyWekg1DaCjXQCNAX8qSyfudc6vp3YFMpUHe5HX8tC8"
   }
 }
