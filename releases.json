@@ -123,10 +123,17 @@
     }
   },
   "1.0.0": {
-    "hash": "/ipfs/QmZMyWekg1DaCjXQCNAX8qSyfudc6vp3YFMpUHe5HX8tC8",
+    "hash": "/ipfs/QmbrapXbZTRU4cYxdmnFcwvBfm4bNXxoQf18xBRC7RXnCd",
     "uploadedTo": {
-      "dappnode": "Mon, 19 Sep 2022 01:55:51 GMT"
+      "dappnode": "Tue, 04 Oct 2022 20:23:20 GMT"
     },
-    "link": "https://dappnode.github.io/sdk-publish/?r=optimism.public.dappnode.eth&v=1.0.0&h=%2Fipfs%2FQmZMyWekg1DaCjXQCNAX8qSyfudc6vp3YFMpUHe5HX8tC8"
+    "link": "https://dappnode.github.io/sdk-publish/?r=optimism.public.dappnode.eth&v=1.0.0&h=%2Fipfs%2FQmbrapXbZTRU4cYxdmnFcwvBfm4bNXxoQf18xBRC7RXnCd"
+  },
+  "1.0.2": {
+    "hash": "/ipfs/Qmevb1VNcguBJ2BpZ53p4fGXLhwCF9PECh4g6NqJuQ2zmm",
+    "uploadedTo": {
+      "dappnode": "Tue, 04 Oct 2022 20:55:08 GMT"
+    },
+    "link": "https://dappnode.github.io/sdk-publish/?r=optimism.public.dappnode.eth&v=1.0.2&h=%2Fipfs%2FQmevb1VNcguBJ2BpZ53p4fGXLhwCF9PECh4g6NqJuQ2zmm"
   }
 }

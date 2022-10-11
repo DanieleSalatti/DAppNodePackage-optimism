@@ -1,6 +1,6 @@
 {
   "name": "optimism.public.dappnode.eth",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Optimism",
   "type": "service",
   "chain": "ethereum",
@@ -24,9 +24,7 @@
     "url": "https://github.com/DanieleSalatti/DAppNodePackage-optimism"
   },
   "license": "GPL-3.0",
-  "globalEnvs": {
-    "all": true
-  },
+  "globalEnvs": {},
   "disclaimer": {
     "message": "This software is experimental, presented “as is” and inherently carries risks."
   },
