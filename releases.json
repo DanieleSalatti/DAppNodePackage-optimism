@@ -135,5 +135,12 @@
       "dappnode": "Tue, 04 Oct 2022 20:55:08 GMT"
     },
     "link": "https://dappnode.github.io/sdk-publish/?r=optimism.public.dappnode.eth&v=1.0.2&h=%2Fipfs%2FQmevb1VNcguBJ2BpZ53p4fGXLhwCF9PECh4g6NqJuQ2zmm"
+  },
+  "1.1.0": {
+    "hash": "/ipfs/QmcLVNx9Urbt7v1dyHaDiR8BbLETjJBRxGfJdomyG9aC9D",
+    "uploadedTo": {
+      "dappnode": "Tue, 11 Oct 2022 13:30:04 GMT"
+    },
+    "link": "https://dappnode.github.io/sdk-publish/?r=optimism.public.dappnode.eth&v=1.1.0&h=%2Fipfs%2FQmcLVNx9Urbt7v1dyHaDiR8BbLETjJBRxGfJdomyG9aC9D"
   }
 }

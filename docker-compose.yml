@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   data-transport-layer:
-    image: "ethereumoptimism/data-transport-layer:0.5.42"
+    image: "ethereumoptimism/data-transport-layer:0.5.48"
     restart: unless-stopped
     environment:
       NETWORK_NAME: mainnet
@@ -31,7 +31,7 @@ services:
     ports:
       - "7878:7878"
   optimism:
-    image: "optimism.optimism.public.dappnode.eth:1.1.0"
+    image: "optimism.optimism.public.dappnode.eth:1.2.0"
     build:
       context: l2geth
       dockerfile: Dockerfile
@@ -95,7 +95,7 @@ services:
       - "9992:9992"
       - "6060:6060"
   replica-healthcheck:
-    image: "ethereumoptimism/replica-healthcheck:1.1.7"
+    image: "ethereumoptimism/replica-healthcheck:1.1.12"
     restart: unless-stopped
     environment:
       NETWORK_NAME: mainnet
