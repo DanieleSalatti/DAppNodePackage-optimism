@@ -1,6 +1,6 @@
 {
   "name": "optimism.public.dappnode.eth",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Optimism",
   "type": "service",
   "chain": "ethereum",
