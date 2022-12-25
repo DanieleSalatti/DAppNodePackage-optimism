@@ -31,7 +31,7 @@ services:
     ports:
       - "7878:7878"
   optimism:
-    image: "optimism.optimism.public.dappnode.eth:1.2.3"
+    image: "optimism.optimism.public.dappnode.eth:1.2.4"
     build:
       context: l2geth
       dockerfile: Dockerfile
